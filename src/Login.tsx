@@ -2,8 +2,8 @@ import { signInWithEmailAndPassword } from "@firebase/auth";
 import { useState } from "react";
 import { Keyboard, Text, TouchableWithoutFeedback, View } from "react-native";
 import { auth } from "../firebase.config";
-import FlatButton from "./FlatButton";
-import Input from "./Input";
+import FlatButton from "./components/FlatButton";
+import Input from "./components/Input";
 
 export default function Login() {
   const [username, setUsername] = useState("");
