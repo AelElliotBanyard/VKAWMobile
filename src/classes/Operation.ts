@@ -35,4 +35,84 @@ export class Operation {
     this.operationTitle = operationTitle;
     this.state = state;
   }
+
+  public get id() {
+    return this._id;
+  }
+
+  set id(value: string) {
+    this._id = value;
+  }
+
+  get Date() {
+    return this.date;
+  }
+
+  set Date(value: Date) {
+    this.date = value;
+  }
+
+  get StartTime() {
+    return this.startTime;
+  }
+
+  set StartTime(value: Timestamp) {
+    this.startTime = value;
+  }
+
+  get EndTime() {
+    return this.endTime;
+  }
+
+  set EndTime(value: Timestamp) {
+    this.endTime = value;
+  }
+
+  get OperationManager() {
+    return this.operationManager;
+  }
+
+  set OperationManager(value: string) {
+    this.operationManager = value;
+  }
+
+  get AmountVk() {
+    return this.amountVk;
+  }
+
+  set AmountVk(value: number) {
+    this.amountVk = value;
+  }
+
+  get OperationVks() {
+    return this.operationVks;
+  }
+
+  set OperationVks(value: string[]) {
+    this.operationVks = value;
+  }
+
+  get Comment() {
+    return this.comment;
+  }
+
+  set Comment(value: string) {
+    this.comment = value;
+  }
+
+  get OperationTitle() {
+    return this.operationTitle;
+  }
+
+  set OperationTitle(value: string) {
+    this.operationTitle = value;
+  }
+
+  get State() {
+    return this.state;
+  }
+
+  set State(value: boolean) {
+    this.state = value;
+  }
 }

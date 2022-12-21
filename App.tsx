@@ -1,8 +1,10 @@
-import { StatusBar } from "expo-status-bar";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
 import { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
 import { auth } from "./firebase.config";
 import Login from "./src/Login";
+import Home from "./src/screens/Home";
+import Operations from "./src/screens/Operations";
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -20,22 +22,16 @@ export default function App() {
   }, []);
 
   if (loggedIn) {
+    const Tab = createBottomTabNavigator();
     return (
-      <View style={styles.container}>
-        <Text>Logged In</Text>
-        <StatusBar style="auto" />
-      </View>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="Operations" component={Operations} />
+        </Tab.Navigator>
+      </NavigationContainer>
     );
   } else {
     return <Login />;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
